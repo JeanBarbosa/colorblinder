@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import * as Font from 'expo-font';
+import { StatusBar } from 'react-native';
+
 import Routes from './src/routes';
 
 export default function App() {
@@ -15,6 +17,11 @@ export default function App() {
 
   // }, []);
 
-  return (<Routes/>);
+  return (
+    <>
+      <StatusBar barStyle="light-content" />
+      <Routes/>
+    </>
+  );
 }
 
