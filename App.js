@@ -1,19 +1,17 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import * as Font from 'expo-font';
+import Routes from './src/routes';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+
+  const [isFontLoaded, setIsFontLoaded] = useState(false);
+
+  useEffect( async()=>{
+      await loadAsync({
+        'dogbyte': require('./assets/fonts/dogbyte.otf')
+      });
+  }, []);
+
+  return (<Routes/>);
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
