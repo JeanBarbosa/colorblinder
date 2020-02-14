@@ -4,7 +4,9 @@ import Home from './pages/Home';
 
 const routes = createAppContainer(
     createSwitchNavigator({
-        Home
+        Home: {
+            screen: Home
+          }
     })
 );
 

@@ -6,11 +6,14 @@ export default function App() {
 
   const [isFontLoaded, setIsFontLoaded] = useState(false);
 
-  useEffect( async()=>{
-      await loadAsync({
-        'dogbyte': require('./assets/fonts/dogbyte.otf')
-      });
-  }, []);
+  // useEffect( async()=>{
+  //     const {isLoaded} = await Font.loadAsync({
+  //         'dogbyte': require('./assets/fonts/dogbyte.otf')
+  //     });
+
+  // console.log(isLoaded);
+
+  // }, []);
 
   return (<Routes/>);
 }
