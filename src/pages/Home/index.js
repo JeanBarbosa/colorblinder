@@ -6,10 +6,10 @@ import Header from '../../components/Header';
 import Hiscore from '../../components/Hiscore';
 import Copyright from '../../components/Copyright';
 
-export default function Home() {
+export default function Home({navigation}) {
 
     onPlayPress = () => {
-        console.log('onplay');
+        navigation.navigate('Game');
     }
 
     handleLeaderboard = () => {
@@ -18,7 +18,7 @@ export default function Home() {
 
     return (           
         <View style={styles.container}>
-            <Header />
+            <Header/>
             
             <TouchableOpacity 
                 onPress={onPlayPress}
