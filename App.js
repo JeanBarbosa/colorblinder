@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import * as Font from 'expo-font';
-import { StatusBar } from 'react-native';
+import {loadAsync} from 'expo-font';
+import { StatusBar} from 'react-native';
+import { AppLoading } from 'expo';
 
 import Routes from './src/routes';
 
@@ -8,14 +9,21 @@ export default function App() {
 
   const [isFontLoaded, setIsFontLoaded] = useState(false);
 
-  // useEffect( async()=>{
-  //     const {isLoaded} = await Font.loadAsync({
-  //         'dogbyte': require('./assets/fonts/dogbyte.otf')
-  //     });
-
-  // console.log(isLoaded);
-
-  // }, []);
+    loadFont = async () => {
+        await loadAsync({
+          'dogbyte': require('./assets/fonts/dogbyte.otf')
+        });
+    }
+    
+  if(!isFontLoaded){
+    return (
+      <AppLoading
+        startAsync={loadFont}
+        onFinish={() => setIsFontLoaded(true)}
+        onError={console.warn}
+      />
+    ); 
+  }
 
   return (
     <>

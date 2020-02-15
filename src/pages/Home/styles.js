@@ -10,7 +10,7 @@ export default StyleSheet.create({
 
       play: {
         fontSize: 45,
-        //fontFamily: "dogbyte",
+        fontFamily: "dogbyte",
         color: "#ecf0f1",
         marginTop: 5
       },
@@ -19,5 +19,18 @@ export default StyleSheet.create({
         height: 60,
         width: 60,
         marginRight: 15
-      }
+      },
+
+      leaderboard: {
+        height: 60,
+        width: 60,
+        marginTop: 5
+      },
+
+      leaderboardTitle: {
+        fontSize: 28.5,
+        fontFamily: 'dogbyte',
+        color: "#ecf0f1",
+        marginTop: 5
+      },
 });
