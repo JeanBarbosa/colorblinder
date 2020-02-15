@@ -22,7 +22,7 @@ export default function Home() {
             
             <TouchableOpacity 
                 onPress={onPlayPress}
-                style={{flexDirection: 'row', alignItems: 'center'}}>
+                style={{flexDirection: 'row', alignItems: 'center', marginTop: 80}}>
                 
                 <Image 
                     source={require('../../../assets/icons/play_arrow.png')}
@@ -37,7 +37,7 @@ export default function Home() {
 
             <TouchableOpacity
                 onPress={handleLeaderboard}
-                style={{flexDirection: 'row', alignItems: 'center'}} 
+                style={{flexDirection: 'row', alignItems: 'center', marginTop: 80}} 
             >
                 <Image 
                     source={require('../../../assets/icons/leaderboard.png')}

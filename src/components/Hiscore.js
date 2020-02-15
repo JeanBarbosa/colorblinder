@@ -3,7 +3,7 @@ import {View, StyleSheet, Image, Text} from 'react-native';
 
 export default function Hiscore() {
   return (
-    <View style={{flexDirection: 'row', alignItems: 'center'}}>
+    <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 20}}>
         <Image 
             source={require('../../assets/icons/trophy.png')} 
             style={styles.trophyIcon}
