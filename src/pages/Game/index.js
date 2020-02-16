@@ -46,6 +46,19 @@ export default function Game() {
     
     };
 
+    onTilePress = (rowIndex, columnIndex) => {
+
+        if(rowIndex == diffTileIndex[0] && columnIndex == diffTileIndex[1]) {
+          // good tile
+          setPoints(points + 1);
+          setTimeLeft(timeLeft + 2);
+          generateNewRound();
+        } else {
+          // wrong tile
+          setTimeLeft(timeLeft - 2);
+        }
+    }
+
     return (
         <View style= {styles.container}>
             <Header fontSize="34" />
@@ -63,8 +76,8 @@ export default function Game() {
                                     backgroundColor: rowIndex == diffTileIndex[0] && columnIndex == diffTileIndex[1] ? diffTileColor : `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`,
                                     margin: 2
                                 }}
-                                onPress={() => console.log(rowIndex, columnIndex)}
-                            />
+                                onPress={() => onTilePress(rowIndex, columnIndex)}
+                                />
                         ))}
                     </View>
                 ))}
