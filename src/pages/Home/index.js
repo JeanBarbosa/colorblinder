@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, SafeAreaView, Text, TouchableOpacity, Image} from 'react-native';
 
 import styles from './styles';
 import Header from '../../components/Header';
@@ -17,7 +17,7 @@ export default function Home({navigation}) {
     }
 
     return (           
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Header/>
             
             <TouchableOpacity 
@@ -50,7 +50,7 @@ export default function Home({navigation}) {
 
             <Copyright></Copyright>
 
-        </View>
+        </SafeAreaView>
     );
 
 }

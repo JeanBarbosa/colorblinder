@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, Dimensions, TouchableOpacity, SafeAreaView } from 'react-native';
 import styles from './styles';
 
 import Header from '../../components/Header';
@@ -60,9 +60,8 @@ export default function Game() {
     }
 
     return (
-        <View style= {styles.container}>
-            <Header fontSize="34" />
-            <Text style={{color: '#fff'}}>{timeLeft}</Text>
+        <SafeAreaView style= {styles.container}>
+            <Header fontSize="40" />
 
             <View style={{ height: width * 0.875, width: width * 0.875, flexDirection: 'row' }}>
             
@@ -83,6 +82,33 @@ export default function Game() {
                 ))}
 
             </View>
-        </View>
+
+            <View style={styles.bottomContainer}>
+                <View style={{ flex: 1 }}>
+                    <Text style={styles.counterCount}>
+                        {points}
+                    </Text>
+                    <Text style={styles.counterLabel}>
+                        points
+                    </Text>
+                </View>
+
+                <View style={{ flex: 1 }}>
+                    <Text>
+                        (...)
+                    </Text>
+                </View>
+                
+                <View style={{ flex: 1 }}>
+                    <Text style={styles.counterCount}>
+                        {timeLeft}
+                    </Text>
+                    <Text style={styles.counterLabel}>
+                        seconds left
+                    </Text>
+                </View>
+            </View>
+
+        </SafeAreaView>
     );
 }
